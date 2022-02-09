@@ -13,14 +13,15 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'description', 'products')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    categories = serializers.HyperlinkedRelatedField(
+    category = serializers.HyperlinkedRelatedField(
         view_name='category_detail',
+        many=True,
         read_only=True
     )
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'price', 'descripton', 'category', 'image')
+        fields = ('id', 'name', 'price', 'description', 'category', 'image')
 
 class CartSerializer(serializers.HyperlinkedModelSerializer):
     products = serializers.HyperlinkedRelatedField(
@@ -31,4 +32,4 @@ class CartSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Cart
-        fields = ('id', 'product', 'quantity', 'total')
+        fields = ('id', 'products', 'quantity', 'total')
