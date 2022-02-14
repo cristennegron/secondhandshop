@@ -7,7 +7,7 @@ function Footer() {
        <footer>
         <Container>
             <Row>
-                <Col className="text-center py-3">Be the first to know about SECONDHANDSHOP drops by joining our mailing list <a href="">here! </a> </Col>
+                <Col className="text-center py-3">Let's keep in touch! Sign up for SECONDHANDSHOP's mailing list <a href=""> here.</a></Col>
            </Row>
         </Container>   
         </footer>
