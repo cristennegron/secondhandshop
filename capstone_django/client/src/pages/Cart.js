@@ -6,7 +6,7 @@ import { addToCart } from '../redux/cartActions'
 
 
 
-function Cart( { match, location, history }) {
+function Cart( {match} ) {
   
   const productId = match.params.id
 
@@ -30,12 +30,16 @@ function Cart( { match, location, history }) {
             <Link to='/'>Your cart is empty! Go Back</Link>
           ) : (
             <ListGroup variant='flush'>
-              
+
             </ListGroup>
           )}
         </Col>
     </Row>
   )
+{/* <div>
+  test
+</div> */}
+  
 
 }
 
