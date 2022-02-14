@@ -1,4 +1,4 @@
-# secondhandshop
+# SECONDHANDSHOP
 ![IMG_9744](https://user-images.githubusercontent.com/93502471/152849037-47ca34bf-5da9-40ab-b70f-148307f7e64d.jpeg)
 
 *Photo from a friend's pop-event event for her second-hand shop*
@@ -24,6 +24,11 @@ Real life application: Many of my friends run second hand stores via instagram o
 - Django
 - Postgres
 - React
+- Redux
+- Bootstrap
+
+## Credits
+[Bootswatch](https://bootswatch.com/lux/)
 
 ## Developer 
 [LinkedIn](https://www.linkedin.com/in/cristennegron/) | [Github](https://github.com/cristennegron)
