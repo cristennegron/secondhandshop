@@ -19,22 +19,41 @@ function Cart( {match} ) {
     }
   }, [dispatch, productId])
 
+  const deleteFromCartHandler = (id) => {
+    
+  }
+
   return (
 
-    <div>test</div>
-    // <Row>
-    //     <Col md={8}>
-    //       <h1> Shopping Cart </h1>
-    //       {cartItems.length === 0 ? (
-
-    //         <Link to='/'>Your cart is empty! Go Back</Link>
-    //       ) : (
-    //         <ListGroup variant='flush'>
-
-    //         </ListGroup>
-    //       )}
-    //     </Col>
-    // </Row>
+    <Row>
+        <Col md={8}>
+          <h2> Your Cart </h2>
+          {cartItems.length === 0 ? (
+          <p> Oh no, your cart is empty!  <Link to='/'> Let's fix that. </Link> </p>
+          ) : (
+            <ListGroup variant='flush'>
+              {cartItems.map(item => (
+                <ListGroup.Item key={(item.product)}>
+                  <Row>
+                    <Col md={2}>
+                      <Image src={item.image} alt={item.name} fluid rounded/>
+                    </Col>
+                    <Col md={3}>
+                      <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    </Col>
+                    <Col md={2}>
+                      ${item.price}
+                    </Col>
+                    <Col md={1}>
+                      <Button onClick={() => deleteFromCartHandler(item.product)} type='button' variant='dark'>Remove</Button>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )}
+        </Col>
+    </Row>
   )
 
   
