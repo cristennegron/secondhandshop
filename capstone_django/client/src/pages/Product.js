@@ -4,7 +4,7 @@ import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap'
 import Products from '../components/Products'
 import axios from 'axios'
 
-function Product( {match} ) {
+function Product( {match, history} ) {
   
     const [product, setProduct] = useState([])
 
@@ -16,6 +16,10 @@ function Product( {match} ) {
         }
         getProduct()
     }, [])
+
+    const addToCartHandler = () => {
+        history.push(`/cart/${match.params.id}`)
+    }
 
 return (
         <div>
@@ -43,7 +47,7 @@ return (
                         </ListGroup.Item>
 
                          <ListGroup.Item>
-                        <Button className='cartbutton' type='button'> Add to Cart </Button>
+                        <Button onClick={addToCartHandler} className='cartbutton' type='button'> Add to Cart </Button>
                         </ListGroup.Item>
                  
                     </ListGroup>
