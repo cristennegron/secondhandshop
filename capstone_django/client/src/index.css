@@ -2,7 +2,9 @@ main {
   min-height: 80vh;
 }
 
-img {
-  min-height: 330px;
-  max-height: 330px;
+
+
+h3 {
+  text-align: center;
 }
+

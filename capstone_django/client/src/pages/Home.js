@@ -8,7 +8,7 @@ function Home() {
     
     const dispatch = useDispatch()
     const productList = useSelector(state => state.productList)
-    const { products} = productList
+    const { products } = productList
 
     useEffect(() => {
       dispatch(listProducts())
@@ -18,7 +18,7 @@ function Home() {
 
   return (
     <div>
-        <h1>Latest Products</h1>
+        <h3>Latest Products</h3>
         <Row>
             {products.map(product => (
               
