@@ -23,7 +23,7 @@ function Product( {match, history} ) {
 
 return (
         <div>
-            <Link to='/' className='btn btn-light my-3'>Go Back</Link>
+           
             <Row>
                 <Col md={6}>
                     <Image src={product.image} alt={product.name} fluid />

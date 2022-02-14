@@ -1,30 +1,23 @@
 import React from 'react'
 import { Navbar, Nav, Container, Row } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <header>
         <Navbar bg="light" expand="lg">
           <Container>
-              {/* <LinkContainer to='/'> */}
+              <Nav.Link as={Link} to='/'>
                 <Navbar.Brand>secondhandshop</Navbar.Brand>
-              {/* </LinkContainer> */}
+              </Nav.Link>
 
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto">
 
-                {/* <LinkContainer to='/about'> */}
-                    <Nav.Link><i className="about"></i>About</Nav.Link>
-                {/* </LinkContainer> */}
-                    
-                {/* <LinkContainer to='/cart'> */}
-                    <Nav.Link><i className="cart"></i>Cart</Nav.Link>
-                {/* </LinkContainer>  */}
-                    
-                    </Nav>
-                </Navbar.Collapse>
+                  <Nav.Link as={Link} to='/about'><i className="about"></i>About</Nav.Link>
+
+                  <Nav.Link as={Link} to='/cart'> <i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
+            </Navbar.Collapse>
             </Container>
 
         </Navbar>   
