@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap'
-import Products from '../components/Products'
-import axios from 'axios'
+import { listProductDetails } from '../redux/productActions'
 
 function Product( {match, history} ) {
   
-    const [product, setProduct] = useState([])
+    const dispatch = useDispatch()
+
+    const productDetails = useSelector(state => state.productDetails)
+
+    const { product } = productDetails
 
     useEffect(() => {
-        console.log(match)
-        async function getProduct() {
-            const { data } = await axios.get(`http://localhost:8000/products/${match.params.id}`)
-            setProduct(data)
-        }
-        getProduct()
-    }, [])
+       dispatch(listProductDetails(match.params.id))
+    }, [dispatch, match])
 
     const addToCartHandler = () => {
         history.push(`/cart/${match.params.id}`)

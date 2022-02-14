@@ -7,13 +7,14 @@ import { listProducts } from '../redux/productActions'
 function Home() {
     
     const dispatch = useDispatch()
+    const productList = useSelector(state => state.productList)
+    const {error, loading, products} = productList
 
     useEffect(() => {
       dispatch(listProducts())
 
     }, [])
 
-    const products = []
 
   return (
     <div>
