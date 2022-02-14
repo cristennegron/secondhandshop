@@ -30,18 +30,21 @@ return (
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                        ${product.price}
+                        $ {product.price}
                         </ListGroup.Item>
-
+                        
                         <ListGroup.Item>
                         {product.description}
                         </ListGroup.Item>
-                        
+
+                        <ListGroup.Item>
+                        Size: {product.size}
+                        </ListGroup.Item>
+
                          <ListGroup.Item>
                         <Button className='cartbutton' type='button'> Add to Cart </Button>
                         </ListGroup.Item>
-                        
-                       
+                 
                     </ListGroup>
                 </Col>
             </Row>
