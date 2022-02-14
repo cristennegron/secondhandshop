@@ -25,5 +25,8 @@ Real life application: Many of my friends run second hand stores via instagram o
 - Postgres
 - React
 
+## Credits
+[Bootswatch](https://bootswatch.com/lux/)
+
 ## Developer 
 [LinkedIn](https://www.linkedin.com/in/cristennegron/) | [Github](https://github.com/cristennegron)
