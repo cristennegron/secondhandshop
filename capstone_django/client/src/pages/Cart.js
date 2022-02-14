@@ -54,7 +54,7 @@ function Cart( {match} ) {
              
               ))}
               <ListGroup.Item>
-                  <h4> Subtotal $ {cartItems.reduce((acc, item) => acc * item.price, 0).toFixed(2)} </h4>
+                  <h4> Subtotal $ {cartItems.reduce((total, item) => total, 0).toFixed(2)} </h4>
                   <Button type="button" className='btn-block' disabled={cartItems.length === 0}> Checkout </Button>
 
               </ListGroup.Item>
