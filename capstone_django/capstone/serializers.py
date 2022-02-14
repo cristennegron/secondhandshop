@@ -5,7 +5,7 @@ from .models import Category, Product, Cart
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
       class Meta:
         model = Category
-        fields = '__all__'
+        fields = ('id', 'name','description')
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
 
