@@ -11,7 +11,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('id', 'name', 'size', 'price', 'description', 'image', 'category')
 
 class CartSerializer(serializers.HyperlinkedModelSerializer):
     products = serializers.HyperlinkedRelatedField(

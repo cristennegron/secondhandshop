@@ -9,6 +9,7 @@ function Product( {match} ) {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
+        console.log(match)
         async function getProduct() {
             const { data } = await axios.get(`http://localhost:8000/products/${match.params.id}`)
             setProduct(data)
