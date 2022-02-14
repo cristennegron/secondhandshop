@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem } from 'react-bootstrap'
-import { addToCart } from '../redux/cartActions'
+import { addToCart, deleteFromCart } from '../redux/cartActions'
 
 function Cart( {match} ) {
   
@@ -20,7 +20,7 @@ function Cart( {match} ) {
   }, [dispatch, productId])
 
   const deleteFromCartHandler = (id) => {
-    
+    dispatch(deleteFromCart(id))
   }
 
   return (
