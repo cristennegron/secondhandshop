@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
+import { Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem } from 'react-bootstrap'
 import { addToCart } from '../redux/cartActions'
 
 function Cart( {match} ) {
@@ -27,7 +27,7 @@ function Cart( {match} ) {
 
     <Row>
         <Col md={8}>
-          <h2> Your Cart </h2>
+          <h4> Your Cart </h4>
           {cartItems.length === 0 ? (
           <p> Oh no, your cart is empty!  <Link to='/'> Let's fix that. </Link> </p>
           ) : (
@@ -47,9 +47,17 @@ function Cart( {match} ) {
                     <Col md={1}>
                       <Button onClick={() => deleteFromCartHandler(item.product)} type='button' variant='dark'>Remove</Button>
                     </Col>
-                  </Row>
+                    </Row>
                 </ListGroup.Item>
+                
+                
+             
               ))}
+              <ListGroup.Item>
+                  <h4> Subtotal $ {cartItems.reduce((acc, item) => acc * item.price, 0).toFixed(2)} </h4>
+                  <Button type="button" className='btn-block' disabled={cartItems.length === 0}> Checkout </Button>
+
+              </ListGroup.Item>
             </ListGroup>
           )}
         </Col>
