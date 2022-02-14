@@ -22,9 +22,19 @@ function Cart( { match, location, history }) {
   }, [dispatch, productId])
 
   return (
-    <div>
-        Cart
-    </div>
+    <Row>
+        <Col md={8}>
+          <h1> Shopping Cart </h1>
+          {cartItems.length === 0 ? (
+
+            <Link to='/'>Your cart is empty! Go Back</Link>
+          ) : (
+            <ListGroup variant='flush'>
+              
+            </ListGroup>
+          )}
+        </Col>
+    </Row>
   )
 
 }
