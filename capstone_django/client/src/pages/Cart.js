@@ -6,7 +6,7 @@ import { addToCart } from '../redux/cartActions'
 
 
 
-function Cart( { match, location, history })
+function Cart( { match, location, history }) {
   
   const productId = match.params.id
 
@@ -27,5 +27,6 @@ function Cart( { match, location, history })
     </div>
   )
 
+}
 
 export default Cart
